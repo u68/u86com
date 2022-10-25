@@ -1,0 +1,95 @@
+e=$1
+h=$2
+#functions
+function help() {
+  echo '
+  This is a list of available commands
+  =======================================================================================================================
+  old                                                         |                 syntax: enable <module> (enables modules)
+  list                                                        |                syntax: list (shows the available modules)
+  help                                                        |     syntax: help (help,-help,--help,h,-h,--h)(shows this)
+  mount                                                       |                 syntax: mount <dir> (adds custom command)
+  e                                                           |                     syntax: e <feture> (enables a feture)
+  '
+  
+}
+
+function old(f) {
+  mv ./old/$f ./
+  chmod +x ./*
+}
+#ifs
+#setup
+if [$e='setup']; then
+  echo 'u sure ur done because this wont be reverable, yet.(y/n)
+  read -p an
+  if [$an='n']; then
+    exit
+  fi
+  if [$an='y']; then
+    chmod +x ./t/*
+    sudo mv ./t /bin
+  fi
+fi
+#command
+if [$e='e']; then
+  mv ./fet/$h.sh ./t
+fi
+ 
+#mount
+if [$e='-mount']; then
+  mv $h ./fet
+fi
+
+#list
+if [$e='-list']; then
+  cd ./fet
+  ls
+  cd ~/u86
+fi
+
+#old
+if [$e='-old']; then
+  old $h
+fi
+
+#help
+if [$e='h']; then
+  help
+  r=1
+fi
+
+if [$e='-h']; then
+  help
+  r=1
+fi
+
+if [$e='help']; then
+  help
+  r=1
+fi
+
+if [$e='-help']; then
+  help
+  r=1
+fi
+
+if [$e='--h']; then
+  help
+  r=1
+fi
+
+if [$e='-h']; then
+  help
+  r=1
+fi
+
+if [$e='--help']; then
+  help
+  r=1
+fi
+
+if [$e='-help']; then
+  help
+  r=1
+fi
