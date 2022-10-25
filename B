@@ -1,0 +1,61 @@
+#!/bin/bash
+
+versioon="0.0.1test"
+
+numreqa=1
+numa=$#
+
+if [ $numa -lt $numreqa ]; then
+  echo "Please specify command
+  sytax:${0} <command> <args>"
+  exit 1
+fi
+
+com=$1
+arggg=$2
+
+echo "command $1"
+
+echo running...
+
+#commands
+
+function help() {
+  echo "h for help idk for idk psl to launch python3 script:psl <dir>"
+}
+
+function idk() {
+ AAAAA
+}
+
+function psl() {
+  if [[ $arggg ]]; then
+    python3 $arggg
+  else
+    echo "U need a dir"
+  fi
+}
+
+function det() {
+  echo $versioon
+}
+
+#ifs
+
+if [[ $com = "h" ]]; then
+  help
+elif [[ $com = "idk" ]]; then
+  idk
+elif [[ $com = "psl" ]]; then
+  psl
+elif [[ $com = "details" ]]; then
+  det
+elif [[ $com != "idk" ]]; then
+  if [[ $com != "h" ]];then
+    if [[ $com != "psl" ]]; then
+      if [[ $com != "details" ]]; then
+        echo "No command found"
+      fi
+    fi
+  fi
+fi
