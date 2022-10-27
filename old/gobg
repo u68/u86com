@@ -1,0 +1,6 @@
+clear
+while true; do
+  echo enter password;
+  read a;
+  echo $a is wrong hint: its not $a;
+done
