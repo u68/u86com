@@ -15,35 +15,35 @@ function help() {
 }
 
 function old(f) {
-  mv ./old/$f ./
+  mv ./old/$f ./t/
   chmod +x ./*
 }
 #ifs
 #setup
 if [$e='setup']; then
   echo 'u sure ur done because this wont be reverable, yet.(y/n)
-  read -p an
+  read an
   if [$an='n']; then
     exit
   fi
   if [$an='y']; then
     chmod +x ./t/*
-    sudo mv ./t /bin
+    sudo mv ./t/ /bin/
   fi
 fi
 #command
 if [$e='e']; then
-  mv ./fet/$h.sh ./t
+  mv ./fet/$h.sh ./t/
 fi
  
 #mount
 if [$e='-mount']; then
-  mv $h ./fet
+  mv $h ./fet/
 fi
 
 #list
 if [$e='-list']; then
-  cd ./fet
+  cd ./fet/
   ls
   cd ~/u86
 fi
